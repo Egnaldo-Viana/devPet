@@ -1,7 +1,9 @@
+import style from './footer.module.css';
+
 export function Footer() {
   return (
-    <footer>
-      <h1>Esse é o footer</h1>
+    <footer className={style.container}>
+      <p className={style.text}>© 2026 • Desenvolvido por Egnaldo Viana</p>
     </footer>
   );
 }

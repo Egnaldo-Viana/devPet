@@ -1,0 +1,22 @@
+
+.container {
+  background-color: #f8f7f5;
+  padding-top: 60px;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container::before {
+  content: '';
+  width: 100%;
+  max-width: 1200px;
+  height: 1px;
+  background-color: #e9ebed;
+  margin-bottom: 12px;
+}
+.text {
+  color: #949caa;
+  font-size: 14px; 
+}
