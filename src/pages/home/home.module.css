@@ -19,15 +19,12 @@
   padding-top: 40px;
 }
 
-
 .productsGrid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 1.5rem; 
   padding: 20px;
 }
-
-
 
 .productCard {
   width: 100%;
@@ -56,7 +53,6 @@
   text-align: center;
 }
 
-
 .productAction {
   display: flex;
   flex-direction: column;
@@ -70,7 +66,6 @@
   color: #f48c25; 
   margin-bottom: 12px
 }
-
 
 .cartButton {
   width: 100%;
@@ -98,7 +93,6 @@
   .productsGrid {
     grid-template-columns: repeat(4, 1fr);
   }
-
 }
 
 @media (max-width: 768px) {

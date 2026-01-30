@@ -2,6 +2,7 @@ import React from 'react';
 import { CartContext } from '../../contexts/CartContext';
 import { api } from '../../service';
 import style from './home.module.css';
+import { Link } from 'react-router-dom';
 
 export interface ProductProps {
   id: number;
@@ -31,14 +32,17 @@ export function Home() {
     <div className={style.divContainer}>
       <main className={style.mainContainer}>
         <h1 className={style.title}>Produtos em alta</h1>
+
         <div className={style.productsGrid}>
           {products.map((product) => (
             <section key={product.id} className={style.productCard}>
-              <img
-                className={style.productImage}
-                src={product.cover}
-                alt={product.title}
-              />
+              <Link to={`/cart/${product.id}`}>
+                <img
+                  className={style.productImage}
+                  src={product.cover}
+                  alt={product.title}
+                />
+              </Link>
               <p className={style.productTitle}>{product.title}</p>
               <div className={style.productAction}>
                 <strong className={style.productPrice}>
@@ -51,7 +55,7 @@ export function Home() {
                   className={style.cartButton}
                   onClick={() => handleAddCartItem(product)}
                 >
-                  comprar
+                  Adicionar ao carrinho
                 </button>
               </div>
             </section>
