@@ -61,6 +61,8 @@
 }
 
 .cartButton{
+  width: 20px;
+  height: 20px;
   background-color: #f48c25;
   padding: 0 0.5rem;
   color: #fff;
@@ -142,4 +144,38 @@
 
 .emptyCart a:hover{
  opacity: 0.5;
+}
+
+
+@media (max-width: 1200px) {
+   .cartWrapper {
+    grid-template-columns: 1fr;
+  }
+ 
+  .cartActions {
+    justify-content: flex-start;
+    margin-left: 0;
+  }
+  .cartItem img {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .cartInfo {
+    margin-left: 0;
+  }
+
+  .finish {
+    padding: 12px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width:780px ){
+   .cartItem {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
 }
