@@ -1,73 +1,65 @@
-# React + TypeScript + Vite
+# 🐶  DevPet
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação frontend desenvolvida em **React**, simulando um e-commerce de PetShop com carrinho de compras, página de detalhes do produto, consumo de API fake e gerenciamento de estado global utilizando **Context API**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📌 Funcionalidades
 
-## React Compiler
+### 🏠 Página Home
+- Consumo de API fake utilizando **json-server**
+- Listagem de produtos em grid
+- Exibição de:
+  - Imagem
+  - Nome do produto
+  - Preço formatado em BRL
+- Botão para adicionar produtos ao carrinho
+- Navegação para página de detalhes do produto
+- Integração com o carrinho via **Context API**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+### 📄 Página de Detalhes do Produto
+- Busca do produto individual pelo **ID**
+- Exibição de:
+  - Imagem
+  - Nome
+  - Descrição
+  - Preço
+- Botão **Adicionar ao carrinho**
+  - Ao adicionar, o usuário é redirecionado para a página do carrinho
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 🛒 Página Carrinho
+- Listagem de produtos adicionados ao carrinho
+- Controle de quantidade:
+  - ➕ Adicionar unidade
+  - ➖ Remover unidade
+- Cálculo automático de:
+  - Subtotal por produto
+  - Total geral do carrinho
+- Exibição de estado vazio do carrinho
+- Botão **Finalizar Compra**
+  - Exibe um alerta informando que a compra foi finalizada com sucesso
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🚀 Tecnologias Utilizadas
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **React JS**
+- **TypeScript**
+- **Context API**
+- **React Router DOM**
+- **CSS Modules**
+- **json-server**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📦 API de Produtos (json-server)
+
+O projeto consome uma API fake criada com **json-server**.
+
+### 🔧 Instalação
+```bash
+npm install -g json-server
